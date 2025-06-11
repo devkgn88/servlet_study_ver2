@@ -19,7 +19,11 @@
 	<a href="views/include_element.jsp">
 		include 태그 연습
 	</a>
-	<h1>4. 피자 주문하기</h1>
+	<h1>4. 도서 대출하기</h1>
+	<a href="/bookReserve">
+		대출 정보 작성하기
+	</a>
+	<h1>5. 피자 주문하기</h1>
 	<a href="/pizzaOrder">
 		주문서 작성하기
 	</a>
