@@ -11,6 +11,9 @@
 		<li>
 			<a href="/makeCookie">쿠키 생성</a>
 		</li>
+		<li>
+			<a href="/editCookie">쿠키 수정</a>
+		</li>
 	</ul>
 	<h3>현재 쿠키 값 확인</h3>
 
