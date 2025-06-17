@@ -21,10 +21,10 @@ public class ReceiveMsgServlet extends HttpServlet {
 		System.out.println("===== 요청 확인 =====");
 		String msg = request.getParameter("msg");
 		System.out.println(msg);
-//		RequestDispatcher view = request.getRequestDispatcher("/views/msgShow.jsp");
-////		= getServletContext().getRequestDispatcher("/views/msgShow.jsp");		
-//		request.setAttribute("msg", msg);
-//		view.forward(request, response);
+		RequestDispatcher view = request.getRequestDispatcher("/views/msgShow.jsp");
+//		= getServletContext().getRequestDispatcher("/views/msgShow.jsp");		
+		request.setAttribute("msg", msg);
+		view.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
