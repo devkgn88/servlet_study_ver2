@@ -19,5 +19,10 @@
 	        <input type="submit" value="보내기">
 	    </fieldset>
 	</form>
+	<h1>2. 강제로 공지하기</h1>
+	<form action="/board/write" method="post">
+	    <input type="text" name="title" placeholder="제목 입력">
+	    <input type="submit" value="작성">
+	</form>
 </body>
 </html>
