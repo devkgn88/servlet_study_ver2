@@ -7,6 +7,7 @@
 <title>쿠키, 세션</title>
 </head>
 <body>
+	<h1>Cookie</h1>
 	<ul>
 		<li>
 			<a href="/makeCookie">쿠키 생성</a>
@@ -42,5 +43,11 @@
 
 	<p>user_id 쿠키 값 : <%= userId %></p>	
 	
+	<h1>Session</h1>
+	<ol>
+		<li>
+			<a href="/createSession">세션 생성</a>
+		</li>
+	</ol>
 </body>
 </html>
