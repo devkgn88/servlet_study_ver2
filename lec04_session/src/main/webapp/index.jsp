@@ -20,6 +20,9 @@
 		<li>
 			<a href="/practiceCookie">쿠키 연습하기</a>
 		</li>
+		<li>
+			<a href="/changePage">방문 횟수 추적하기</a>
+		</li>
 	</ul>
 	<h3>현재 쿠키 값 확인</h3>
 
