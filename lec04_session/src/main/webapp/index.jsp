@@ -48,6 +48,21 @@
 		<li>
 			<a href="/createSession">세션 생성</a>
 		</li>
+		<li>
+			<a href="/editSession">세션 수정</a>
+		</li>
+		<li>
+			<a href="/removeSession">세션 삭제</a>
+		</li>
 	</ol>
+	<%
+		String memberId = "세션 없음";
+		if(session != null){
+			if(session.getAttribute("member_id") != null){
+				memberId = (String)session.getAttribute("member_id");
+			}
+		}
+	%>
+	<p>세션 정보 : <%=memberId %></p>
 </body>
 </html>
