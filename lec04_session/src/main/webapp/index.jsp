@@ -14,6 +14,9 @@
 		<li>
 			<a href="/editCookie">쿠키 수정</a>
 		</li>
+		<li>
+			<a href="/deleteCookie">쿠키 삭제</a>
+		</li>
 	</ul>
 	<h3>현재 쿠키 값 확인</h3>
 
