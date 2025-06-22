@@ -36,11 +36,9 @@ public class LoginServlet extends HttpServlet {
 			Account account = new Account(inputId,name);
 			session.setAttribute("account", account);
 			session.setMaxInactiveInterval(60*30);
-			
-		} else {
-			response.sendRedirect("/");
 		}
-			
+		
+		response.sendRedirect("/");
 		
 	}
 
