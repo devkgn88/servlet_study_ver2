@@ -8,6 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+	<h1>텍스트 + Ajax</h1>
 	<input type="text" id="userId" name="user_id">
 	<button id="ajax_get_btn">Get방식</button>
 	<button id="ajax_post_btn">Post방식</button>
@@ -51,7 +52,16 @@
 		});
 	</script>
 	
-	
-
+	<h1>JSON + Ajax</h1>
+	<label>이름 검색: </label>
+	<input type="text" id="searchName">
+	<button id="json_get_btn">조회</button>
+	<div id="json_get_div"></div>
+	<script>
+		$(document).ready(function(){
+			
+			
+		});
+	</script>
 </body>
 </html>
