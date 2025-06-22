@@ -1,18 +1,21 @@
 package com.gn.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import com.gn.model.vo.Book;
 import com.gn.model.vo.Novel;
 import com.gn.model.vo.Poem;
+import com.gn.service.BookService;
+import com.gn.service.BookServiceImpl;
 
 public class BookStoreApplication {
+	
+	private static List<Book> resultList = null;
+	private static BookService bookService = new BookServiceImpl();
+	private static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		List<Book> list = new ArrayList<Book>();
 
 		while (true) {
 			System.out.print("책 종류를 입력하세요 (소설/시): ");
@@ -49,7 +52,7 @@ public class BookStoreApplication {
 				book = new Poem(isbn, price);
 			}
 
-			list.add(book);
+			bookService.insert(book);
 
 			System.out.print("입력을 종료하시겠습니까? (y/Y 입력 시 종료): ");
 			String exit = sc.nextLine().trim();
@@ -62,14 +65,16 @@ public class BookStoreApplication {
 		System.out.println("\n===== 도서 목록 =====");
 		int total = 0;
 
-		for (Book b : list) {
+		resultList = bookService.list();
+		
+		for (Book b : resultList) {
 			b.printInfo();
 			System.out.println();
 			total += b.getPrice();
 		}
 
-		if (!list.isEmpty()) {
-			double avg = (double) total / list.size();
+		if (!resultList.isEmpty()) {
+			double avg = (double) total / resultList.size();
 			System.out.printf("\n총 평균 가격 : %.2f원\n", avg);
 		} else {
 			System.out.println("등록된 도서가 없습니다.");
