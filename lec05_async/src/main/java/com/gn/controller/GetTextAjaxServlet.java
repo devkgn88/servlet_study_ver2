@@ -23,13 +23,13 @@ public class GetTextAjaxServlet extends HttpServlet {
 		// response.setContentType("text/html; charset=utf-8");
 		// 1-2. 연결통로 생성 후 문구 추가
 		// PrintWriter out = response.getWriter();
-		// out.append("<p>입력된 아이디 "+userId+"의 길이는 "+userId.length()+"입니다.</p>");
+		// out.append("<p>GET 방식으로 받은 아이디 "+userId+"의 길이는 "+userId.length()+"입니다.</p>");
 	
 		// 2-1. 문자 형태로 응답
 		response.setContentType("text/plain; charset=utf-8");
 		// 2-2. 연결통로 생성후 문구 추가
 		PrintWriter out = response.getWriter();
-		out.append("입력된 아이디 "+userId+"의 길이는 "+userId.length()+"입니다.");
+		out.append("GET 방식으로 받은 아이디 "+userId+"의 길이는 "+userId.length()+"입니다.");
 		
 	}
 
