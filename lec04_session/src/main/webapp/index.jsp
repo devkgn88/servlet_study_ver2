@@ -11,6 +11,16 @@
 <title>쿠키, 세션</title>
 </head>
 <body>
+	<h2>쇼핑하기</h2>
+	<ul>
+		<li>
+			<a href="/productList">상품 목록</a>
+		</li>
+		<li>
+			<a href="/cartList">장바구니</a>
+		</li>
+	</ul>
+
 	<% if (account == null){ %>
 		<form action="/login" method="post">
 			<label for="id">아이디 : </label>
