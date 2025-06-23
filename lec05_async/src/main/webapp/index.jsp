@@ -59,8 +59,26 @@
 	<div id="json_get_div"></div>
 	<script>
 		$(document).ready(function(){
-			
-			
+			$("#json_get_btn").click(function(){
+				const keyword = $("#searchName").val();
+				$.ajax({
+					url:"/searchAccount?name="+keyword,
+					type:"get",
+					dataType:"json",
+					success: function(data){
+						$("#json_get_div").empty();
+						if(data.arr.length === 0){
+							alert("검색 결과가 없습니다.");
+						} else{
+							for(let i = 0 ; i < data.arr.length ; i++){
+								const user = data.arr[i];
+								$("#json_get_div").append('<p>'+user.name+'</p>');
+							}
+						}
+						
+					}
+				})
+			});
 		});
 	</script>
 </body>

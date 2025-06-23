@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>SearchAccountServlet</display-name>
+    <servlet-name>SearchAccountServlet</servlet-name>
+    <servlet-class>com.gn.controller.SearchAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchAccountServlet</servlet-name>
+    <url-pattern>/SearchAccountServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
