@@ -19,4 +19,24 @@
     <servlet-name>SearchAccountServlet</servlet-name>
     <url-pattern>/SearchAccountServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ScoreAjaxServlet</display-name>
+    <servlet-name>ScoreAjaxServlet</servlet-name>
+    <servlet-class>com.gn.controller.ScoreAjaxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ScoreAjaxServlet</servlet-name>
+    <url-pattern>/ScoreAjaxServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchProductServlet</display-name>
+    <servlet-name>SearchProductServlet</servlet-name>
+    <servlet-class>com.gn.controller.SearchProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchProductServlet</servlet-name>
+    <url-pattern>/SearchProductServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
