@@ -42,5 +42,17 @@
 	<h2>(2) EL 방식</h2>
 	<p>이름: ${person.name}</p>
 	<p>나이: ${person.age}세</p>
+	
+	<h1>3. EL 객체 출력 연습</h1>
+	<%@ page import="com.gn.dto.Planet" %>
+	<%
+	    Planet planet = new Planet("지구", 1.5, true);
+	    request.setAttribute("planet", p);
+	%>
+	<p>이름: ${planet.name}</p>
+	<p>태양으로부터의 거리: ${planet.distance}억 km</p>
+	<p> 
+		거주 가능 여부 : ${planet.habitable ? "O" : "X"} %>
+	</p>
 </body>
 </html>
