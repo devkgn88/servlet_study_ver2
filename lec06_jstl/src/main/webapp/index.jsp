@@ -86,9 +86,37 @@
 	<p>${num1 gt num2 and not empty menuList}</p>
 	
 	<h1>5. JSTL Core Library</h1>
-	<h1>(1) 변수 관련 태그</h1>
+	<h2>(1) 변수 선언</h2>
 	<c:set var="num1" value="10"/>
 	<c:set var="num2" value="20"/>
 	<c:set var="result" value="${num1 + num2}"/>
+	
+	<h2>(2) 변수 출력</h2>
+	<c:set var="result" value="<b>안녕하세요!</b>"/>
+	<!-- 기본 출력: <b>안녕하세요!</b>가 태그가 아니라 글자로 보임 -->
+	<c:out value="${result}"/><br>
+	
+	<!-- escapeXml="false" 설정: <b>안녕하세요!</b>가 실제로 굵게 표시됨 -->
+	<c:out value="${result}" escapeXml="false"/>
+	
+	<h2>(3) 조건문:if</h2>
+	<c:if test="${num1 le num2}">
+		<p>num1이 num2보다 작거나 같다.</p>
+	</c:if>
+	
+	<h2>(4) 조건문:choose</h2>
+	<c:choose>
+		<c:when test="${num1 gt 20 }">
+			<p>10이 20보다 큽니까?</p>
+		</c:when>
+		<c:when test="${num1 ge 10 }">
+			<p>num1이 10보다 크거나 같으면서, 20보다 작거나 같나요?</p>
+		</c:when>
+		<c:otherwise>
+			<p>num1이 10보다 작습니까?</p>
+		</c:otherwise>
+	</c:choose>
+	
+	
 </body>
 </html>
