@@ -117,6 +117,10 @@
 		</c:otherwise>
 	</c:choose>
 	
-	
+	<h1>6. 사이트 테마 설정</h1>
+	<form method="post" action="/setTheme">
+	    <button type="submit" name="theme" value="dark">다크모드</button>
+	    <button type="submit" name="theme" value="light">라이트모드</button>
+	</form>
 </body>
 </html>
