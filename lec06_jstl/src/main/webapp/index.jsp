@@ -27,5 +27,20 @@
 	<p>${sessionScope.test }</p>
 	<p>${applicationScope.test }</p>
 	<p>${test }</p>
+	
+	<h1>2. EL로 객체 다루기</h1>
+	<%@ page import="com.gn.dto.Person" %>
+	<%
+		request.setAttribute("person", new Person("김철수", 77));
+	%>
+	<h2>(1) JSP 방식</h2>
+	<%
+		Person p = (Person)request.getAttribute("person");
+	%>
+	<p>이름: <%= p.getName() %></p>
+	<p>나이: <%= p.getAge() %>세</p>
+	<h2>(2) EL 방식</h2>
+	<p>이름: ${person.name}</p>
+	<p>나이: ${person.age}세</p>
 </body>
 </html>
