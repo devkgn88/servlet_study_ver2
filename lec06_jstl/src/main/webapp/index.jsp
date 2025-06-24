@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,12 +48,47 @@
 	<%@ page import="com.gn.dto.Planet" %>
 	<%
 	    Planet planet = new Planet("지구", 1.5, true);
-	    request.setAttribute("planet", p);
+	    request.setAttribute("planet", planet);
 	%>
 	<p>이름: ${planet.name}</p>
 	<p>태양으로부터의 거리: ${planet.distance}억 km</p>
 	<p> 
 		거주 가능 여부 : ${planet.habitable ? "O" : "X"} %>
 	</p>
+	<h1>4. EL 연산자</h1>
+	<%@page import="java.util.*"%>
+	<%
+	    request.setAttribute("num1", 7);
+	    request.setAttribute("num2", 2);
+	    request.setAttribute("str1", "햄버거");
+	    request.setAttribute("str2", "피자");
+	
+	    List<String> menu = new ArrayList<>();
+	    menu.add("짜장면");
+	    menu.add("짬뽕");
+	    request.setAttribute("menuList", menu);
+	%>
+	<p>${num1 + num2}</p>
+	<p>${num1 - num2}</p>
+	<p>${num1 * num2}</p>
+	<p>${num1 div num2}</p>
+	<p>${num1 mod num2}</p>
+	
+	<p>${str1}${str2}</p>
+	<p>${str1 eq str2}</p>
+	<p>${str1 eq "햄버거"}</p>
+	
+	<p>${empty menuList}</p>
+	<p>${not empty menuList}</p>
+		
+	<p>${num1 gt num2}</p>
+	<p>${num1 lt num2}</p>
+	<p>${num1 gt num2 and not empty menuList}</p>
+	
+	<h1>5. JSTL Core Library</h1>
+	<h1>(1) 변수 관련 태그</h1>
+	<c:set var="num1" value="10"/>
+	<c:set var="num2" value="20"/>
+	<c:set var="result" value="${num1 + num2}"/>
 </body>
 </html>
