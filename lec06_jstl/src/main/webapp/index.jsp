@@ -122,5 +122,27 @@
 	    <button type="submit" name="theme" value="dark">다크모드</button>
 	    <button type="submit" name="theme" value="light">라이트모드</button>
 	</form>
+	<h1>(5) JSTL Core 반복문</h1> 
+	<c:forEach var="i" begin="1" end="10" step="2">
+		<p>반복 숫자: ${i}</p>
+	</c:forEach>
+	<% 
+	    String[] colors = {"red", "green", "blue"};
+	    request.setAttribute("colors", colors);
+	%>
+	<ul>
+	    <c:forEach var="color" items="${colors}">
+	        <li style="color:${color}">${color}</li>
+	    </c:forEach>
+	</ul>
+	<c:forEach var="num" begin="0" end="5" varStatus="status">
+	  <p>
+	      숫자: ${num}<br>
+	      인덱스: ${status.index}<br>
+	      카운트: ${status.count}<br>
+	      첫번째인가요? ${status.first}<br>
+	      마지막인가요? ${status.last}
+	  </p>
+	</c:forEach>
 </body>
 </html>
