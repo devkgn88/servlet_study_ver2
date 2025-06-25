@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,12 +171,26 @@
 	<a href="${testUrl}">게시판 이동</a>
 	
 	<h1>8. JSTL Formatting Library</h1>
-	<h1>JSTL Formatting</h1>
+	<h2>(1) 숫자 정보 포맷팅</h2>
 	<fmt:formatNumber value="1234.567" type="number"/><br>
 	<fmt:formatNumber value="0.875" type="percent"/><br>
 	
 	<fmt:formatNumber value="1234.567" pattern="#,###.##"/> <br>
 	<fmt:formatNumber value="1234.5" pattern="00000.00"/> <br>
 	<fmt:formatNumber value="1234.5" pattern="#,###.000"/> <br>
+	
+	<h2>(2) 날짜 정보 포맷팅</h2>
+	<c:set var="now" value="<%= new java.util.Date()%>" />
+	<fmt:formatDate value="${now}" type="date"/><br>
+	<fmt:formatDate value="${now}" type="time"/><br>
+	<fmt:formatDate value="${now}" type="both"/><br>
+	<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss"/>
+	
+	<h1>9. JSTL function Library</h1>
+	<c:set var="data" value="How Are You? I am fine"/>
+	<p><c:out value="${data}"/></p>
+	<p><c:out value="${fn:toUpperCase(data) }"/></p>
+	<p><c:out value="${fn:replace(data,'fine','apple') }"/></p>
+	<p><c:out value="${fn:contains(data,'You')?'You가 있네':'You가 없네' }"/></p>
 </body>
 </html>
