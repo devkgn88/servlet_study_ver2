@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,5 +155,27 @@
 	    </select>
 	    <button type="submit">출력하기</button>
 	</form>
+	<h2>(6) JSTL Core 경로 설정 </h2>
+	<a href="<%= request.getContextPath() %>/boardList">게시판</a>
+	<script src="<%= request.getContextPath() %>/resources/js/jquery-3.7.1.js"></script>
+	
+	<a href="<c:url value='/boardList' />">게시판</a>
+	<script src="<c:url value='/resources/js/jquery-3.7.1.js' />"></script>
+
+	<c:url var="testUrl" value="/boardList">
+	    <c:param name="nowPage" value="1" />
+	    <c:param name="boardTitle" value="테스트" />
+	</c:url>
+	
+	<a href="${testUrl}">게시판 이동</a>
+	
+	<h1>8. JSTL Formatting Library</h1>
+	<h1>JSTL Formatting</h1>
+	<fmt:formatNumber value="1234.567" type="number"/><br>
+	<fmt:formatNumber value="0.875" type="percent"/><br>
+	
+	<fmt:formatNumber value="1234.567" pattern="#,###.##"/> <br>
+	<fmt:formatNumber value="1234.5" pattern="00000.00"/> <br>
+	<fmt:formatNumber value="1234.5" pattern="#,###.000"/> <br>
 </body>
 </html>
