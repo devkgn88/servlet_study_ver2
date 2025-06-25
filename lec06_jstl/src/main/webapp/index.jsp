@@ -144,5 +144,15 @@
 	      마지막인가요? ${status.last}
 	  </p>
 	</c:forEach>
+	<h1>7. 계단형 별 찍기</h1>
+	<form method="post" action="/printStar">
+	    <label>출력할 줄 수를 선택하세요 : </label>
+	    <select name="count">
+	        <option value="3">3줄</option>
+	        <option value="5">5줄</option>
+	        <option value="7">7줄</option>
+	    </select>
+	    <button type="submit">출력하기</button>
+	</form>
 </body>
 </html>

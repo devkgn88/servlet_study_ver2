@@ -19,4 +19,14 @@
     <servlet-name>SetThemeServlet</servlet-name>
     <url-pattern>/SetThemeServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StarServlet</display-name>
+    <servlet-name>StarServlet</servlet-name>
+    <servlet-class>com.gn.controller.StarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StarServlet</servlet-name>
+    <url-pattern>/StarServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
