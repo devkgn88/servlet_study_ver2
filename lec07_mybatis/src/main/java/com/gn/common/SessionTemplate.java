@@ -1,4 +1,4 @@
-package com.gn.common.db;
+package com.gn.common;
 
 import java.io.IOException;
 import java.io.InputStream;
