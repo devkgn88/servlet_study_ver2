@@ -49,4 +49,14 @@
     <servlet-name>StudentInsertViewServlet</servlet-name>
     <url-pattern>/StudentInsertViewServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentUpdateServlet</display-name>
+    <servlet-name>StudentUpdateServlet</servlet-name>
+    <servlet-class>com.gn.controller.StudentUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentUpdateServlet</servlet-name>
+    <url-pattern>/StudentUpdateServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

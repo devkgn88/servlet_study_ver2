@@ -11,7 +11,7 @@
 	<p>번호: ${student.studentNo}</p>
 	<p>이름: ${student.studentName}</p>
 	<p>나이: ${student.studentAge}</p>
-	
+	<a href="/student/update?studentNo=${student.studentNo}">수정</a>
 	<a href="/student/list">목록으로 돌아가기</a>
 </body>
 </html>
