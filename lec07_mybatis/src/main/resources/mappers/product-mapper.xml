@@ -21,5 +21,16 @@
                 AND product_category = #{productCategory}
             </if>
         </where>
+        <choose>
+	        <when test="sort == 'price'">
+	            ORDER BY product_price ASC
+	        </when>
+	        <when test="sort == 'category'">
+	            ORDER BY product_category ASC
+	        </when>
+	        <otherwise>
+	            ORDER BY product_no ASC
+	        </otherwise>
+	    </choose>
     </select>
 </mapper>
