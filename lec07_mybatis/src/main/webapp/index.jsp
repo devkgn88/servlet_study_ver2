@@ -28,11 +28,10 @@
 	    
         <label>정렬 기준:</label>
 	    <select name="sort">
-	        <option value="1">가격순</option>
-	        <option value="2">카테고리순</option>
+	        <option value="price">가격순</option>
+	        <option value="category">카테고리순</option>
 	    </select>
 	    <input type="submit" value="검색">
 	</form>
-	
 </body>
 </html>
