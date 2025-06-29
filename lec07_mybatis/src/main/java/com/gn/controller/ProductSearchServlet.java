@@ -23,12 +23,18 @@ public class ProductSearchServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String productName = request.getParameter("productName");
-		int productCategory = Integer.parseInt(request.getParameter("productCategory"));
+		int productCategory = 0 ;
+		if(request.getParameter("productCategory") != null
+				&& !request.getParameter("productCategory").equals("")) {
+			productCategory = Integer.parseInt(request.getParameter("productCategory"));
+		}
 		
-		System.out.println(productName + " : "+productCategory);
+		String sort = request.getParameter("sort");
+		
 		Product param = new Product();
 		param.setProductName(productName);
 		param.setProductCategory(productCategory);
+		param.setSort(sort);
 		
 		List<Product> list = service.searchProduct(param);
 		System.out.println(list);
