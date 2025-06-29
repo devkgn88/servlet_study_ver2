@@ -15,4 +15,9 @@ public class StudentService {
     public Student getStudentDetail(int studentNo) {
         return dao.selectOne(studentNo);
     }
+    
+    public int insertStudent(Student s) {
+        return dao.insert(s);
+    }
+
 }

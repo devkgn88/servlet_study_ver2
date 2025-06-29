@@ -21,4 +21,12 @@ public class StudentDao {
         session.close();
         return s;
     }
+    
+    public int insert(Student s) {
+        SqlSession session = SessionTemplate.getSqlSession(true);
+        int result = session.insert("com.gn.mapper.StudentMapper.insert", s);
+        session.close();
+        return result;
+    }
+
 }

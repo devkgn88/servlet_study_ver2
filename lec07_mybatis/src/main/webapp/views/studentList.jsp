@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>목록 페이지</title>
 </head>
 <body>
 	<h1>학생 목록</h1>
@@ -25,6 +25,6 @@
 	        </tr>
 	    </c:forEach>
 	</table>
-	
+	<a href="/student/insert">학생 등록</a>
 </body>
 </html>
