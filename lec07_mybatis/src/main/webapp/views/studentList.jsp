@@ -18,7 +18,7 @@
 	        <th>나이</th>
 	    </tr>
 	    <c:forEach var="s" items="${list}">
-	        <tr>
+     		<tr onclick="location.href='/student/detail?no=${s.studentNo}'" style="cursor:pointer;">
 	            <td>${s.studentNo}</td>
 	            <td>${s.studentName}</td>
 	            <td>${s.studentAge}</td>

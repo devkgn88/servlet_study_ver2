@@ -14,4 +14,11 @@ public class StudentDao {
         session.close();
         return list;
     }	
+    
+    public Student selectOne(int studentNo) {
+        SqlSession session = SessionTemplate.getSqlSession(true);
+        Student s = session.selectOne("com.gn.mapper.StudentMapper.selectOne", studentNo);
+        session.close();
+        return s;
+    }
 }

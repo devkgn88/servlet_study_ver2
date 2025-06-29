@@ -19,4 +19,24 @@
     <servlet-name>StudentListServlet</servlet-name>
     <url-pattern>/StudentListServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentDetailServlet</display-name>
+    <servlet-name>StudentDetailServlet</servlet-name>
+    <servlet-class>com.gn.controller.StudentDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentDetailServlet</servlet-name>
+    <url-pattern>/StudentDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentDetailsServlet</display-name>
+    <servlet-name>StudentDetailsServlet</servlet-name>
+    <servlet-class>com.gn.controller.StudentDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentDetailsServlet</servlet-name>
+    <url-pattern>/StudentDetailsServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
