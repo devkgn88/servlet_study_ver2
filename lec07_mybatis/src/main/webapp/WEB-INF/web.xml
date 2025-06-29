@@ -69,4 +69,24 @@
     <servlet-name>StudentDeleteServlet</servlet-name>
     <url-pattern>/StudentDeleteServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CategoryListServlet</display-name>
+    <servlet-name>CategoryListServlet</servlet-name>
+    <servlet-class>com.gn.controller.CategoryListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CategoryListServlet</servlet-name>
+    <url-pattern>/CategoryListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductListServlet</display-name>
+    <servlet-name>ProductListServlet</servlet-name>
+    <servlet-class>com.gn.controller.ProductListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductListServlet</servlet-name>
+    <url-pattern>/ProductListServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

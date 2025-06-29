@@ -13,6 +13,20 @@
 				학생 목록 조회
 			</a>
 		</li>
+		<li>
+			<a href="/category/list">
+				카테고리 목록 조회
+			</a>
+		</li>
 	</ol>
+	<form action="/product/search" method="get">
+	    <label>상품명:</label>
+	    <input type="text" name="productName"><br>
+	    
+	    <label>카테고리:</label>
+	    <input type="number" name="productCategory"><br>
+	    
+	    <input type="submit" value="검색">
+	</form>
 </body>
 </html>
