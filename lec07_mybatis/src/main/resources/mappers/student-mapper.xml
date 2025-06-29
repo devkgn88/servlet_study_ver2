@@ -23,4 +23,16 @@
 	    VALUES (#{studentName}, #{studentAge})
 	</insert>
 		
+	<update id="updateStudent" parameterType="com.gn.dto.Student">
+	    UPDATE student
+	    SET student_name = #{studentName},
+	        student_age = #{studentAge}
+	    WHERE student_no = #{studentNo}
+	</update>
+	
+	<delete id="deleteStudent" parameterType="int">
+	    DELETE FROM student
+	    WHERE student_no = #{studentNo}
+	</delete>
+	
 </mapper>

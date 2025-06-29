@@ -30,7 +30,22 @@ public class StudentUpdateServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+        int studentNo = Integer.parseInt(request.getParameter("studentNo"));
+        String studentName = request.getParameter("studentName");
+        int studentAge = Integer.parseInt(request.getParameter("studentAge"));
+
+        Student student = new Student();
+        student.setStudentNo(studentNo);
+        student.setStudentName(studentName);
+        student.setStudentAge(studentAge);
+
+        int result = service.updateStudent(student);
+
+        if(result > 0) {
+            response.sendRedirect("/student/list");
+        } else {
+            response.sendRedirect("/student/update?studentNo=" + studentNo);
+        }
 	}
 
 }

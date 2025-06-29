@@ -59,4 +59,14 @@
     <servlet-name>StudentUpdateServlet</servlet-name>
     <url-pattern>/StudentUpdateServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentDeleteServlet</display-name>
+    <servlet-name>StudentDeleteServlet</servlet-name>
+    <servlet-class>com.gn.controller.StudentDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentDeleteServlet</servlet-name>
+    <url-pattern>/StudentDeleteServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -20,5 +20,12 @@ public class StudentService {
         return dao.insert(s);
     }
     
+    public int updateStudent(Student student) {
+        return dao.updateStudent(student);
+    }
+    
+    public int deleteStudent(int studentNo) {
+        return dao.deleteStudent(studentNo);
+    }
 
 }

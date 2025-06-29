@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>학생 정보 수정</h1>
-	<form action="/student/updateEnd" method="post">
+	<form action="/student/update" method="post">
 	    <input type="hidden" name="studentNo" value="${student.studentNo}">
 	    이름 : <input type="text" name="studentName" value="${student.studentName}"><br>
 	    나이 : <input type="number" name="studentAge" value="${student.studentAge}"><br>

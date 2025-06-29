@@ -28,5 +28,20 @@ public class StudentDao {
         session.close();
         return result;
     }
+    
+    public int updateStudent(Student student) {
+        SqlSession session = SessionTemplate.getSqlSession(true);
+        int result = session.update("com.gn.mapper.StudentMapper.updateStudent", student);
+        session.close();
+        return result;
+    }
+    
+    public int deleteStudent(int studentNo) {
+        SqlSession session = SessionTemplate.getSqlSession(true);
+        int result = session.delete("com.gn.mapper.StudentMapper.deleteStudent", studentNo);
+        session.close();
+        return result;
+    }
+
 
 }
