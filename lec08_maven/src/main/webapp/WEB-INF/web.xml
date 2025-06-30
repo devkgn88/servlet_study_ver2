@@ -9,14 +9,4 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>MemberCreateServlet</display-name>
-    <servlet-name>MemberCreateServlet</servlet-name>
-    <servlet-class>com.gn.controller.MemberCreateServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MemberCreateServlet</servlet-name>
-    <url-pattern>/MemberCreateServlet</url-pattern>
-  </servlet-mapping>
 </web-app>
