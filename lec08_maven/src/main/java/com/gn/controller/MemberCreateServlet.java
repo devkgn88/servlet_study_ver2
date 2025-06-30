@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.json.simple.JSONObject;
 
+import com.gn.dto.Member;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,8 +31,12 @@ public class MemberCreateServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");		
 		String memberId = request.getParameter("memberId");
 		String memberPw = request.getParameter("memberPw");
+				
+		Member param = new Member();
+		param.setMemberId(memberId);
+		param.setMemberPw(memberPw);
 		
-		System.out.println(memberId+" : "+memberPw);
+		System.out.println(param);
 		
 		// 데이터베이스에 저장
 		JSONObject obj = new JSONObject();
