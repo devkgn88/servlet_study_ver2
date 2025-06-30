@@ -24,7 +24,12 @@ public class MemberLoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		String memberId = request.getParameter("memberId");
+		String memberPw = request.getParameter("memberPw");
+		
+		// 전달받은 아이디와 비밀번호가 일치하는 회원 정보 반환
+		Member member = 
+		
 	}
 
 }
