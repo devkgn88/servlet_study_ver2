@@ -7,6 +7,7 @@
 <title>메인화면</title>
 </head>
 <body>
+	<h1>메인화면</h1>
 	<%@ include file="/views/include/nav.jsp" %>
 </body>
 </html>
