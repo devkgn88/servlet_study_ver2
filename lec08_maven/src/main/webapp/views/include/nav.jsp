@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>   
-<c:out value="${loginMember }sss"/>
-<p>${loginMember.memberId }</p>
 <nav>
 	<div id="nav_wrap">
 		<div class="menu">
@@ -21,6 +19,11 @@
 						</li>
 					</c:when>
 					<c:otherwise>
+						<li>
+							<a>
+								게시판
+							</a>
+						</li>
 						<li>
 							<a href="<c:url value='/memberLogout'/>">
 								로그아웃
