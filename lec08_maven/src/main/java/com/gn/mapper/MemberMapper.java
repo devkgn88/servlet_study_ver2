@@ -4,4 +4,7 @@ import com.gn.dto.Member;
 
 public interface MemberMapper {
 	int insertMember(Member param);
+	
+	Member selectMember(Member param);
+	
 }
