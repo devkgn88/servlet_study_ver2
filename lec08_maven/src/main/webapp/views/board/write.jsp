@@ -30,7 +30,7 @@
 		        const formData = new FormData(form);
 		        
 		        $.ajax({
-		            url : "/boardCreate",
+		            url : "/boardWrite",
 		            type : "post",
 		            data : formData,
 		            enctype : "multipart/form-data",
@@ -41,7 +41,7 @@
 		            success : function(res){
 		                alert(res.res_msg);
 		                if(res.res_code == 200){
-		                    location.href = "<c:url value='/boardList'/>";
+		                    location.href = "<%=request.getContextPath()%>/boardList";
 		                }
 		            }
 		        });
