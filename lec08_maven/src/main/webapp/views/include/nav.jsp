@@ -20,7 +20,7 @@
 					</c:when>
 					<c:otherwise>
 						<li>
-							<a>
+							<a href="<c:url value='/boardList'/>">
 								게시판
 							</a>
 						</li>
