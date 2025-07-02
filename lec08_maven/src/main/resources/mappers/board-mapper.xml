@@ -12,7 +12,8 @@
       <result property="memberId" column="member_id"/>
   </resultMap>
 
-  <select id="selectBoardList" resultMap="boardResultMap">
+  <select id="selectBoardList" resultMap="boardResultMap"
+  	parameterType="com.gn.dto.Board">
     SELECT 
       B.board_no,
       B.board_title,
@@ -22,6 +23,11 @@
       DATE_FORMAT(B.mod_date, '%Y-%m-%d %H:%i:%s') AS mod_date
     FROM board B
     JOIN member m ON B.board_writer = m.member_no
+    LIMIT #{limitPageNo},#{numPerPage}
+  </select>
+  
+  <select id="selectBoardCount" resultType="_int">
+  	SELECT COUNT(*) FROM board
   </select>
   
   <insert id="insertBoard" parameterType="com.gn.dto.Board" useGeneratedKeys="true" keyProperty="boardNo">

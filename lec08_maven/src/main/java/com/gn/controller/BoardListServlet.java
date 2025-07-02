@@ -22,8 +22,17 @@ public class BoardListServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Board> boardList = service.selectBoardList();
+		String nowPage = request.getParameter("nowPage");
+		Board param = new Board();
+		if(nowPage != null) {
+			param.setNowPage(Integer.parseInt(nowPage));
+		}
+		int totalData = service.selectBoardCount();
+		param.setTotalData(totalData);
+		
+		List<Board> boardList = service.selectBoardList(param);
 		request.setAttribute("boardList", boardList);
+		request.setAttribute("paging", param);
 		request.getRequestDispatcher("/views/board/list.jsp").forward(request, response);
 	}
 

@@ -1,9 +1,13 @@
 package com.gn.dto;
 
+import com.gn.common.vo.Paging;
+
 import lombok.Data;
+import lombok.ToString;
 
 @Data
-public class Board {
+@ToString
+public class Board extends Paging{
 	private int boardNo;
 	private String boardTitle;
 	private String boardContent;

@@ -12,8 +12,12 @@ import com.gn.dto.Board;
 public class BoardService {
 	private BoardDao boardDao = new BoardDao();
 
-	public List<Board> selectBoardList() {
-		return boardDao.selectBoardList();
+	public List<Board> selectBoardList(Board param) {
+		return boardDao.selectBoardList(param);
+	}
+	
+	public int selectBoardCount() {
+		return boardDao.selectBoardCount();
 	}
 	
 	// 게시글 + 파일 트랜잭션 처리
@@ -24,17 +28,12 @@ public class BoardService {
 		try {
 			// 1. 게시글 등록
 			result = boardDao.insertBoard(session,board);
-			
-			System.out.println("1 : "+result);
-			
+						
 			if(result > 0 && attach != null) {
-				System.out.println("2 : "+result);
 				// 2. 파일 정보 등록
 				attach.setBoardNo(board.getBoardNo());
 				result = boardDao.insertAttach(session, attach);
-				System.out.println("3 : "+result);
 			}
-			System.out.println("4 : "+result);
 			
 			if(result > 0) {
 				session.commit();
