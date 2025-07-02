@@ -28,5 +28,6 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<a href="<c:url value='/boardWrite'/>">게시글 등록</a>
 </body>
 </html>
