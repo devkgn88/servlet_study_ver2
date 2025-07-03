@@ -23,7 +23,7 @@
 			<th>작성일</th>
 		</tr>
 		<c:forEach var="b" items="${boardList}" varStatus="vs">
-			<tr>
+			<tr onclick="location.href='<c:url value='/boardDetail?no=${b.boardNo}'/>'">
 				<%-- <td>${b.boardNo}</td> --%>
 				<td>${(paging.nowPage-1)*(paging.numPerPage) + (vs.index+1) }</td>
 				<td>${b.boardTitle}</td>

@@ -49,4 +49,12 @@ public class BoardService {
 		}
 		return result;
 	}
+	
+	public Board selectBoardDetail(int boardNo) {
+		return boardDao.selectBoardDetail(boardNo);
+	}
+	
+	public Attach selectAttachOne(int boardNo) {
+		return boardDao.selectAttachOne(boardNo);
+	}
 }

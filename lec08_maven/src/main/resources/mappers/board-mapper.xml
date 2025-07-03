@@ -11,6 +11,13 @@
       <result property="modDate" column="mod_date" />
       <result property="memberId" column="member_id"/>
   </resultMap>
+  
+  <resultMap id="attachResultMap" type="com.gn.dto.Attach">
+  	<result property="attachNo" column="attach_no"/>
+  	<result property="boardNo" column="board_no"/>
+  	<result property="oriName" column="ori_name"/>
+  	<result property="reName" column="re_name"/>
+  </resultMap>
 
   <select id="selectBoardList" resultMap="boardResultMap"
   	parameterType="com.gn.dto.Board">
@@ -54,4 +61,26 @@
        INSERT INTO attach (board_no, ori_name, re_name)
        VALUES (#{boardNo}, #{oriName}, #{reName})
     </insert>
+    
+    <select id="selectBoardDetail" resultMap="boardResultMap">
+	    SELECT 
+	        B.board_no,
+	        B.board_title,
+	        B.board_content,
+	        M.member_id,
+	        DATE_FORMAT(B.reg_date, '%Y-%m-%d %H:%i:%s') AS reg_date
+	    FROM board B
+	    JOIN member M ON B.board_writer = M.member_no
+	    WHERE B.board_no = #{boardNo}
+	</select>
+	
+	<select id="selectAttachOne" resultMap="attachResultMap">
+	    SELECT 
+	        attach_no,
+	        board_no,
+	        ori_name,
+	        re_name
+	    FROM attach
+	    WHERE board_no = #{boardNo}
+	</select>
 </mapper>

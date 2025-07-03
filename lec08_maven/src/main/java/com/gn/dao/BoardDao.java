@@ -32,4 +32,18 @@ public class BoardDao {
         int result = session.insert("com.gn.mapper.BoardMapper.insertAttach", attach);
         return result;
     }
+	
+	public Board selectBoardDetail(int boardNo) {
+	    SqlSession session = SqlSessionTemplate.getSqlSession(true);
+	    Board board = session.selectOne("com.gn.mapper.BoardMapper.selectBoardDetail", boardNo);
+	    session.close();
+	    return board;
+	}
+
+	public Attach selectAttachOne(int boardNo) {
+	    SqlSession session = SqlSessionTemplate.getSqlSession(true);
+	    Attach attach = session.selectOne("com.gn.mapper.BoardMapper.selectAttachOne", boardNo);
+	    session.close();
+	    return attach;
+	}
 }
