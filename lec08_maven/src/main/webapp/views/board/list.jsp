@@ -10,8 +10,11 @@
 <body>
 	<%@ include file="/views/include/nav.jsp" %>
 
-	<h3>게시판 목록</h3>
-	
+	<h1>게시판 목록</h1>
+	<form method="get" action="<c:url value='/boardList'/>">
+	    <input type="text" name="keyword" placeholder="제목 또는 작성자 검색" value="${param.keyword}">
+	    <input type="submit" value="검색">
+	</form>
 	<table border="1">
 		<tr>
 			<th>번호</th>
@@ -32,17 +35,17 @@
 	<c:if test="${not empty paging }">
 		<div>
 			<c:if test="${paging.prev }">
-				<a href="<c:url value='/boardList?nowPage=${paging.pageBarStart-1 }'/>">
+				<a href="<c:url value='/boardList?nowPage=${paging.pageBarStart-1 }&keyword=${param.keyword }'/>">
 					&laquo;
 				</a>
 			</c:if>
 			<c:forEach var="i" begin="${paging.pageBarStart }" end="${paging.pageBarEnd }">
-				<a href="<c:url value='/boardList?nowPage=${i }'/>">
+				<a href="<c:url value='/boardList?nowPage=${i }&keyword=${param.keyword }'/>">
 					${i }
 				</a>
 			</c:forEach>
 			<c:if test="${paging.next }">
-				<a href="<c:url value='/boardList?nowPage=${paging.pageBarEnd+1 }'/>">
+				<a href="<c:url value='/boardList?nowPage=${paging.pageBarEnd+1 }&'/>">
 					&raquo;
 				</a>
 			</c:if>			

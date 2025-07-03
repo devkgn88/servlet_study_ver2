@@ -23,11 +23,15 @@ public class BoardListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nowPage = request.getParameter("nowPage");
+		String keyword = request.getParameter("keyword");
+		
 		Board param = new Board();
 		if(nowPage != null) {
 			param.setNowPage(Integer.parseInt(nowPage));
 		}
-		int totalData = service.selectBoardCount();
+		param.setKeyword(keyword);
+		
+		int totalData = service.selectBoardCount(param);
 		param.setTotalData(totalData);
 		
 		List<Board> boardList = service.selectBoardList(param);

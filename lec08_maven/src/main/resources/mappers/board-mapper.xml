@@ -23,11 +23,26 @@
       DATE_FORMAT(B.mod_date, '%Y-%m-%d %H:%i:%s') AS mod_date
     FROM board B
     JOIN member m ON B.board_writer = m.member_no
+    <where>
+        <if test="keyword != null and keyword != ''">
+            (B.board_title LIKE CONCAT('%', #{keyword}, '%') 
+            OR M.member_id LIKE CONCAT('%', #{keyword}, '%'))
+        </if>
+    </where>
     LIMIT #{limitPageNo},#{numPerPage}
   </select>
   
-  <select id="selectBoardCount" resultType="_int">
-  	SELECT COUNT(*) FROM board
+  <select id="selectBoardCount" resultType="_int"
+  	parameterType="com.gn.dto.Board">
+  	SELECT COUNT(*)
+    FROM board B
+    JOIN member M ON B.board_writer = M.member_no
+    <where>
+        <if test="keyword != null and keyword != ''">
+            (B.board_title LIKE CONCAT('%', #{keyword}, '%') 
+            OR M.member_id LIKE CONCAT('%', #{keyword}, '%'))
+        </if>
+    </where>
   </select>
   
   <insert id="insertBoard" parameterType="com.gn.dto.Board" useGeneratedKeys="true" keyProperty="boardNo">

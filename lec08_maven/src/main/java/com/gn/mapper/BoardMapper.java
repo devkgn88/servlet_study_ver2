@@ -12,5 +12,5 @@ public interface BoardMapper {
 	
 	int insertAttach(Attach param);
 	
-	int selectBoardCount();
+	int selectBoardCount(Board param);
 }
