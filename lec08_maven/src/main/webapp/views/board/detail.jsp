@@ -18,5 +18,7 @@
 	    <img src="<c:url value='/filePath?no=${board.boardNo}'/>" width="200">
 	    <a href="<c:url value='/fileDownload?no=${board.boardNo}'/>">파일 다운로드</a>
 	</c:if>
+	
+	<a href="<c:url value='/boardDelete?no=${board.boardNo }'/>">게시글 삭제</a>
 </body>
 </html>
